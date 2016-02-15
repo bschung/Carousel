@@ -41,6 +41,10 @@ Settings
 -User can dismiss the settings screen.
 -User can log out
 
+Optional: Learn more about Carousel
+-Optional: Show the "Learn more about Carousel" button in the photo timeline.
+-Optional: Tap the X to dismiss the banner
+
 Walkthrough of Dropbox app:
 
 ![Video Walkthrough](assignment2-carousel.gif)

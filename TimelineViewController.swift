@@ -11,7 +11,14 @@ import UIKit
 class TimelineViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var bannerView: UIImageView!
     
+    @IBAction func onClose(sender: AnyObject) {
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.scrollView.transform = CGAffineTransformMakeTranslation(0,-45)
+            self.bannerView.alpha = 0
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

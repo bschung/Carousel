@@ -109,7 +109,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Kjb-pV-bhW">
@@ -232,6 +232,9 @@
                                                 <rect key="frame" x="48" y="179" width="119" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
+                                                <connections>
+                                                    <segue destination="je4-q0-eyz" kind="modal" id="JRN-RU-dxJ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gFq-gd-3YY">
                                                 <rect key="frame" x="16" y="179" width="30" height="30"/>
@@ -492,8 +495,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                             </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="banner" id="HLL-qk-i8k">
+                                <rect key="frame" x="0.0" y="64" width="319" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="WzD-G3-8AL">
-                                <rect key="frame" x="0.0" y="64" width="320" height="477"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="433"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="feed" id="hv9-1Y-sWc">
@@ -525,6 +533,17 @@
                                     <segue destination="ffh-Ew-8M5" kind="push" id="LuP-sF-Dr5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oD9-2A-ZSC">
+                                <rect key="frame" x="283" y="72" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClose:" destination="HYS-PR-LC7" eventType="touchUpInside" id="096-rB-Y4y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -533,12 +552,13 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1600"/>
                     <connections>
-                        <outlet property="scrollView" destination="WzD-G3-8AL" id="STn-07-T8s"/>
+                        <outlet property="bannerView" destination="HLL-qk-i8k" id="IfB-QX-DK8"/>
+                        <outlet property="scrollView" destination="WzD-G3-8AL" id="OpH-SZ-Rfe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V5J-Xg-REU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1632" y="2041"/>
+            <point key="canvasLocation" x="1644" y="2041"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="I8Z-7w-lhO">
@@ -635,6 +655,21 @@
             </objects>
             <point key="canvasLocation" x="2360" y="836"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="SxD-qy-DsQ">
+            <objects>
+                <viewController id="FJx-KI-wWl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eoh-uX-Q6i">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89A-Sr-Oox" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2360" y="3399"/>
+        </scene>
         <!--Conversations View Controller-->
         <scene sceneID="oqe-yn-18D">
             <objects>
@@ -669,6 +704,7 @@
     </scenes>
     <resources>
         <image name="backup_button" width="320" height="97"/>
+        <image name="banner" width="319" height="44"/>
         <image name="check_box" width="20" height="20"/>
         <image name="check_box_selected" width="20" height="20"/>
         <image name="conversations" width="320" height="568"/>
